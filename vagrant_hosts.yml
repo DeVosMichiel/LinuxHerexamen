@@ -26,7 +26,7 @@
 # [1] http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
 ---
 - name: srv001
-  ip: 192.168.56.11
+  ip: 192.168.56.10
 
 - name: srv002
-  ip: 192.168.56.22
+  ip: 192.168.56.20

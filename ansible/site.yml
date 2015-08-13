@@ -1,0 +1,16 @@
+# site.yml
+---
+#labo02
+- hosts: srv001
+  sudo: true
+  roles:
+    - common
+    - db
+    - web
+    - wordpress
+    - ssl
+
+- hosts: srv002
+  sudo: true
+  roles:
+    - common

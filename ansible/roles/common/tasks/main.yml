@@ -1,0 +1,15 @@
+# roles/common/tasks/main.yml
+---
+- name: Install common packages
+  yum: pkg={{item}} state=installed
+  with_items:
+    - libselinux-python
+
+- name: Enable firewall
+  service: name=firewalld state=running enabled=true
+  tags: common
+
+- name: Install repositories
+  yum: pkg={{item}} state=installed
+  with_items:
+    - http://fedora.cu.be/epel/7/x86_64/e/epel-release-7-5.noarch.rpm

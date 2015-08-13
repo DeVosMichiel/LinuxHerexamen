@@ -1,0 +1,6 @@
+# group_vars/all
+---
+# Application database
+dbname: db
+dbuser: user
+dbpasswd: passwd

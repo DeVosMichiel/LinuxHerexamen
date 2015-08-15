@@ -1,0 +1,17 @@
+# roles/bind/tasks/main.yml
+
+- name: Install BIND
+  yum: pkg={{item}} state=installed
+  with_items:
+     - bind
+     - bind-utils
+
+- name: Start BIND Service
+  service: name=named state=running enabled=yes
+    
+- name: Open DNS-port 53/udp (permanent)
+  firewalld: port=53/udp permanent=true state=enabled
+  
+- name: Open DNS-port 53/udp (non-permanent)
+  firewalld: port=53/udp permanent=false state=enabled
+ 

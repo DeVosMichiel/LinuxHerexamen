@@ -1,4 +1,4 @@
 ---
-# file roles/wordpress/handlers/main.yml
+# roles/wordpress/handlers/main.yml
 - name: Restart Apache
   service: name=httpd state=reloaded
